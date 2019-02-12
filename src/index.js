@@ -1,4 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React                from 'react';
+import ReactDOM             from 'react-dom';
+import thunk                from 'redux-thunk';
+import { Provider }         from 'react-redux';
+import { createStore }      from 'redux';
+import { applyMiddleware }  from 'redux';
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+
+import App                  from './components/App';
+import reducers             from './reducers';
+
+const store = createStore(reducers, applyMiddleware(thunk));
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.querySelector('#root')
+);

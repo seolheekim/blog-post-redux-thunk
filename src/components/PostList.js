@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { connect }          from 'react-redux';
-import { fetchPosts }       from '../actions';
+import { fetchPostsAndUsers }       from '../actions';
 import UserHeader           from './UserHeader';
-
 
 class PostList extends Component {
   //life cycle method that is calling the action creator
   componentDidMount() {
-    this.props.fetchPosts()
+    this.props.fetchPostsAndUsers()
   };
 
   // renderList() helper method will have lots of 'logic' to render the list
@@ -56,5 +55,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps,
-  { fetchPosts }
+  { fetchPostsAndUsers }
 )(PostList);

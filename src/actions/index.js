@@ -36,9 +36,10 @@ export const fetchUser = id => async dispatch => {
 
 //Action Creator
 
+//  await key is going to essentially make sure that it waits for the
+//  API request to be completed before it moves on and does anything else.
+
 // export const fetchPostsAndUsers= () => async (dispatch, getState) => {
-//   *** await key is going to essentially make sure that it waits for the API request to be ***
-//   *** completed before it moves on and does anything else. ***
 //   await dispatch(fetchPosts())
 //   const userIds = _.uniq(_.map(getState().posts, 'userId'))
 //   userIds.forEach(id => dispatch(fetchUser(id)));
@@ -78,3 +79,4 @@ export const fetchUser = id => async dispatch => {
 //      })
 //    }
 //  }
+
